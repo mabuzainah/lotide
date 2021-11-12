@@ -2,23 +2,22 @@ const eqArrays = function (array1, array2){
     if (array1.length !== array2.length){
         return false;
     } else {
-        array1.every((v, i) => v === array2[i])
+        for (var i=0; i<array1.length; i++){
+            if (array1[i]===array2[i]){
+                return true;
+            } return false;
+        }
     }
 };
 
-
-//  for reference ONLY!! Refer to assertEqual
-//const assertEqual = function(actual, expected) {
-//    if (actual===expected){
-//        return console.log(wave,wave,wave,"Assertion Passed: " + actual + " === " + expected);
-//    } else return console.log(mad,mad,mad,"Assertion Failed: " + actual + " !=== " + expected);
-//};
-
-
 const assertArraysEquals = function (arr1, arr2){
-    if ((arr1 !== undefined) && (arr2 !== undefined)){
-        eqArrays (arr1,arr2);
+    if (eqArrays (arr1,arr2)){
+        console.log("Assertion Passed: " + arr1 + " === " + arr2);
     } else {
-        return undefined;
+        return console.log("Assertion Failed: " + arr1 + " !== " + arr2);
     }
-}
+};
+/*
+console.log(assertArraysEquals("1,2,3","1,2,3"));
+console.log(assertArraysEquals("1,2,3,4","1,2,3"));
+*/
