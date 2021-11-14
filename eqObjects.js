@@ -7,21 +7,6 @@ const assertEqual = function(actual, expected) {
     } else return console.log(mad,mad,mad,"Assertion Failed: " + actual + " !=== " + expected);
 };
 
-// FUNCTION IMPLEMENTATION to compare whether two arrays contents are the same
-const eqArrays = function (array1, array2){
-    if (array1.length !== array2.length){
-        return false;
-    } else {
-        //array1.every((v, i) => v === array2[i])
-        for (var i=0; i<array1.length; i++){
-            if (array1[i]===array2[i]){
-                return true;
-            } return false;
-        }
-    }
-};
-
-
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 
@@ -49,6 +34,8 @@ const eqObjects = function(object1, object2) {
 
 */
 
+// Returns true if both objects have identical keys with identical values.
+// Otherwise you get back a big fat false!
 const eqObjects4 = function(object1, object2) {
     let valueToBeReturned = true; 
     if (Object.keys(object1).length !== Object.keys(object2).length) {
@@ -56,15 +43,40 @@ const eqObjects4 = function(object1, object2) {
     }
    for(val1 of Object.keys(object1)){
        for (val2 of Object.keys(object2)){
-           if (val1 === val2){
-               valueToBeReturned = true;
-            } else {
-                valueToBeReturned = false;
-            }
+           if (Array.isArray(val1) && Array.isArray(val2)){
+               eqArrays(val1,val2);
+           } else {
+               if (val1 === val2){
+                   valueToBeReturned = true;
+               } else {
+                   valueToBeReturned = false;
+               }
+           }
+           //if (val1 === val2){
+           //    valueToBeReturned = true;
+           // } else {
+           //     valueToBeReturned = false;
+           // }
         }
     return valueToBeReturned;  //returning the value on whether the item in object2 matches that of object1
     }
 };
+
+
+// FUNCTION IMPLEMENTATION to compare whether two arrays contents are the same
+const eqArrays = function (array1, array2){
+    if (array1.length !== array2.length){
+        return false;
+    } else {
+        //array1.every((v, i) => v === array2[i])
+        for (var i=0; i<array1.length; i++){
+            if (array1[i]===array2[i]){
+                return true;
+            } return false;
+        }
+    }
+};
+
 
 
 const ab = { a: "1", b: "2" };
