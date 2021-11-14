@@ -44,7 +44,7 @@ const eqObjects4 = function(object1, object2) {
    for(val1 of Object.keys(object1)){
        for (val2 of Object.keys(object2)){
            if (Array.isArray(val1) && Array.isArray(val2)){
-               eqArrays(val1,val2);
+               valueToBeReturned = eqArrays(val1,val2);
            } else {
                if (val1 === val2){
                    valueToBeReturned = true;
