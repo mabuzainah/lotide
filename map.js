@@ -47,5 +47,3 @@ const results1 = map(words, word => word[0]);
 // each word.
 
 console.log(results1);
-
-
