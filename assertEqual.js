@@ -8,9 +8,5 @@ const assertEqual = function(actual, expected) {
         return console.log(wave,wave,wave,"Assertion Passed: " + actual + " === " + expected);
     } else return console.log(mad,mad,mad,"Assertion Failed: " + actual + " !=== " + expected);
 };
-
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual(1,3);
-assertEqual("Bootcamp","Bootcamp");
+//exporting the file so it can be used in other js files.
+module.exports = assertEqual;
