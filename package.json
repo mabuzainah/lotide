@@ -1,5 +1,5 @@
 {
-  "name": "lotide",
+  "name": "@mabuzainah/lotide",
   "version": "1.0.0",
   "description": "Lighthouse Labs Project 1",
   "main": "assertArraysEqual.js",
